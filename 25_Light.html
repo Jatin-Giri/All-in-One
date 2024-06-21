@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        color: #eee5;
+      }
+      @property --rotate {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+      }
+      h1{
+        background-image: 
+        conic-gradient(
+            from var(--rotate) at 29% 10%,
+            #0b1012 40%,
+            #f4f7fc55,
+            #0b1012 60%
+        );
+        font-size: 120px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rt 3s ease-in-out infinite alternate;
+        
+      }
+      @keyframes rt{
+        from{--rotate:0.15turn ;}
+        to{--rotate:-0.15turn ;}
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Light</h1>
+  </body>
+</html>

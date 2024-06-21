@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        padding: 20px;
+        width: 500px;
+        aspect-ratio: 1;
+        margin: 20px auto;
+        box-shadow: 0 0 20px #000;
+        text-align: center;
+        background-color: darkred;
+        font-family: monospace;
+      }
+      .item {
+        width: 220px;
+        aspect-ratio: 1;
+        margin-bottom: 20px;
+        box-shadow: 0 0 20px #000;
+
+        &::first-line {
+          font-size: 30px;
+          color: black;
+          font-family: monospace;
+        }
+      }
+      :root{
+        --i1-i2-clr :rgb(184, 51, 7);
+        --i3-i4-clr :rgb(10, 46, 25);
+        --i5-i6-clr :rgb(23, 36, 50);
+        --i7-i8-clr :rgb(68, 11, 71);
+        --i9-i10-clr :rgb(98, 11, 36);
+      }
+      .item1, .item2 {
+        background-color: var(--i1-i2-clr);
+      }
+
+      /* box2 */
+      .box2 {
+        .item3 {
+          background-color: var(--i3-i4-clr);
+          position: relative;
+          left: 230px;
+          top: 120px;
+        }
+        .item4 {
+          background-color: var(--i3-i4-clr);
+        }
+      }
+
+      /* box3 */
+      .box3 {
+        position: relative;
+
+        .item5 {
+          background-color: var(--i5-i6-clr);
+          position: absolute;
+          bottom: 0px;
+          right: 0;
+        }
+        .item6 {
+          background-color: var(--i5-i6-clr);
+        }
+      }
+
+      /* box4 */
+      .box4 {
+        position: relative;
+
+        .item7 {
+          background-color: var(--i7-i8-clr);
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+        }
+        .item8 {
+          background-color: var(--i7-i8-clr);
+        }
+      }
+
+      /* box5 */
+      .box5 {
+
+        .item9 {
+          background-color: var(--i9-i10-clr);
+          position: sticky;
+          top: 30px;
+        }
+        .item10 {
+          background-color: var(--i9-i10-clr);
+        }
+        h2 {
+          margin: 0;
+        }
+      }
+      p{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        font-size: 25px;
+        font-family: monospace;
+      }
+      h2{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1">
+      <div class="item item1">
+        Position : Static <br />
+        Normal flow, default Position
+      </div>
+      <div class="item item2">Normal Box</div>
+    </div>
+
+    <div class="box box2">
+      <div class="item item3">
+        Position : Relative <br />
+        left: 230px; <br />
+        top: 120px; <br />
+        we can access four Property top, bottom, left, right <br />
+        it can move it orignal position<br />
+      </div>
+      <div class="item item4">Normal Box</div>
+    </div>
+
+    <div class="box box3">
+      <div class="item item5">
+        Position:Absolute<br />
+        bottom: 0; <br />
+        right: 0; <br />
+        we can access four Property top, bottom, left, right <br />
+        it can move anywhere or <br />
+        say it can not follow any rule(move over text)<br />
+      </div>
+      <div class="item item6">Normal Box</div>
+    </div>
+
+    <div class="box box4">
+      <div class="item item7">
+        Position:fixed<br />
+        bottom: 20px; <br />
+        right: 20px; <br />
+        we can access four Property top, bottom, left, right <br />
+        it fixed to viewport screen <br />
+        it can move anywhere or <br />
+        say it can not follow any rule(move over text)<br />
+      </div>
+      <div class="item item8">Normal Box</div>
+    </div>
+
+    <div class="box box5">
+      <div class="item item9">
+        Position : sticky<br />
+        top: 30px; <br />
+        <br />
+        we can access four Property top, bottom, left, right <br />
+        <h2>It Mixture of static and fixed</h2>
+        But Bound to it parent container
+      </div>
+      <div class="item item10">Normal Box</div>
+    </div>
+
+    <h2>Dummuy Text</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sed
+      nam mollitia. Vero, eaque, voluptatibus nostrum optio labore corporis,
+      ipsum facilis obcaecati quaerat unde dolor. Culpa, perferendis laboriosam
+      sit nisi sapiente blanditiis nesciunt harum nulla voluptatem fugit saepe
+      aliquam vitae. Libero quisquam quo ut animi possimus quis voluptate eius
+      doloremque placeat, nesciunt impedit tenetur vitae, veniam consectetur!
+      Pariatur voluptatum tempore, vel perspiciatis nihil minima quibusdam
+      cumque aut, fugiat nemo eius ea, ullam commodi earum quia. Accusamus atque
+      dicta odio minus modi. Facilis quod perspiciatis consequuntur delectus
+      officia provident facere, corrupti consectetur eveniet eaque perferendis?
+      Cum rem facilis distinctio perferendis dicta, molestiae saepe doloremque
+      labore, dolor consequatur voluptas ratione rerum quibusdam, hic cupiditate
+      pariatur corporis quia. Aspernatur voluptate quo a aut magni reiciendis
+      laborum earum in facere qui, tempore blanditiis veritatis fugiat placeat
+      delectus molestias neque incidunt officia voluptatum sapiente vel? Nulla
+      nam necessitatibus quae consectetur corrupti magni. A voluptas dolorum
+      nulla quis quia quaerat quam est voluptatem ut repudiandae odio error
+      atque cumque libero consectetur velit provident, praesentium cupiditate
+      voluptates molestiae porro cum animi! Velit dolorum est praesentium
+      dignissimos sed, culpa consectetur nihil, facere eligendi tempore aliquam
+      laborum sapiente explicabo repudiandae asperiores debitis architecto
+      earum, aliquid saepe possimus. Aliquid impedit pariatur illo aut quam in
+      recusandae autem ipsa placeat! Enim laborum, minus quia exercitationem
+      veniam iure voluptatibus nulla, illo facere temporibus ad, accusamus
+      possimus debitis maiores sit ut aliquam impedit officia optio eligendi
+      laudantium consequuntur magnam! Corporis sequi voluptates est, modi
+      deleniti cum dolor optio quo nulla neque labore eos asperiores! Tempore
+      expedita necessitatibus quod quas accusamus officia at labore quibusdam
+      dolore nihil, sint, dolor unde exercitationem velit explicabo repudiandae
+      culpa illo nobis eius. Soluta, expedita. Voluptates ullam alias, id sequi
+      facere placeat. Nulla, fuga id nam velit, autem laudantium quisquam
+      exercitationem voluptatum facere temporibus repudiandae quod fugit dolorem
+      consequatur!
+    </p>
+   
+  </body>
+</html>

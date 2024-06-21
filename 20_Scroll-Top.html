@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Top</title>
+    <style>
+        body{
+            background-color: #333;
+        }
+        .tab{
+            min-width: 300px;
+            height: 90vh;
+            display: grid;
+            place-items: center;
+            font-size: 80px;
+            color: #fff;
+            border: 5px solid red;
+            margin: 50px;
+            background-color: seagreen;
+        }
+        .tab:nth-of-type(2n){
+            background-color: coral;
+        }
+        #toTop{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            aspect-ratio: 1;
+            font-size: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: #fff;
+            box-shadow:0 0 20px #fff,
+            0 3px #555
+            , 0 5px #777;
+            scale: 1.1;
+            background-image:  radial-gradient( red,darkred);
+            transition: transform 0.3s,
+                        box-shadow 0.3s,
+                        scale .5s;
+                      
+        }
+        #toTop:active{
+            transform: translateY(15px);
+            scale: .99;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">Scroll</div>
+    <div class="tab">2</div>
+    <div class="tab">3</div>
+    <div class="tab">4</div>
+    <div class="tab">5</div>
+    <div class="tab">6</div>
+    <div class="tab">7</div>
+    <div class="tab">8</div>
+    <div class="tab">9</div>
+    <button id="toTop">^</button>
+
+    <script>
+        let toTop = document.getElementById('toTop');
+        toTop.style.display = 'none';
+        window.addEventListener('scroll',()=>{
+            if(this.scrollY > 500){
+                toTop.style.display = 'block';
+            }else{
+                toTop.style.display = 'none';
+            }
+        })
+        toTop.onclick = function(){
+            window.scrollTo({
+                top : 0,
+                behavior : 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

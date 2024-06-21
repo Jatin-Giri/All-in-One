@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      .box {
+        width: 200px;
+        aspect-ratio: 1;
+        background-color: rebeccapurple;
+      }
+      @media (min-width: 600px) {
+        .box {
+          background-color: rgb(53, 237, 17);
+        }
+      }
+      @media (orientation: portrait) {
+        .box {
+          background-color: rgb(42, 63, 165);
+        }
+      }
+      @media (min-aspect-ratio: 1) {
+        .box {
+          background-color: rgb(28, 109, 48);
+        }
+      }
+      @media (min-aspect-ratio: 16/9) {
+        .box {
+          background-color: rgb(102, 27, 96);
+        }
+      }
+      @media (width >= 500px) {
+        .box {
+          background-color: rgb(186, 57, 10);
+        }
+      }
+      /* @media (300px <= width <= 500px) { */
+      @media (min-width:300px) and (max-width:500px) {
+        .box {
+          background-color: rgb(221, 11, 141);
+          /* background-color: rgb(221, 175, 11); */
+        }
+      } 
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. At non dignissimos
+    suscipit eius repellat qui esse beatae, illo aliquam ad culpa asperiores
+    magni. Quae ipsam sint illo beatae repudiandae eum.
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 30px;
+        margin: 0;
+        background: #333;
+        font-family: "Courier New", Courier, monospace;
+      }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        box-sizing: border-box;
+      }
+      section {
+        border: 2px solid red;
+        min-height: 500px;
+        min-width: 750px;
+        margin: 15px;
+      }
+      section > div {
+        padding: 0;
+        border: 1px solid green;
+        width: 400px;
+        height: 400px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 520;
+        transition: ease-in-out 2s;
+      }
+      section > div > p {
+        /* border: 1px solid yellow; */
+        line-height: 1px;
+      }
+      section > div > p:hover {
+        font-size: 17px;
+        color: red;
+      }
+
+      /* 1 */
+      .box_1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 2 */
+      .box_2 {
+        display: grid;
+        place-items: center;
+      }
+
+      /* 3 */
+      .box_3 {
+        position: relative;
+      }
+      .box_3 > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* 4 */
+      .box_4 {
+        display: flex;
+      }
+      .box_4 > div {
+        margin: auto;
+      }
+
+      /* 5 */
+      .box_5 {
+        display: grid;
+      }
+      .box_5 > div {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="box_1">
+      <div>
+        <p>.box_1{</p>
+        <p>display: flex;</p>
+        <p>justify-content: center;</p>
+        <p>align-items: center;</p>
+        <p>}</p>
+      </div>
+    </section>
+
+    <section class="box_2">
+      <div>
+        <p>.box_2{</p>
+        <p>display: grid;</p>
+        <p>place-items: center;</p>
+        <p>}</p>
+      </div>
+    </section>
+
+    <section class="box_3">
+      <div>
+        <p>.box_3{</p>
+        <p>position: relative;</p>
+        <p>} <br>
+        <br>.box_3>div{</p>
+        <p>position:absolute;</p>
+        <p>top: 50%;</p>
+        <p>left: 50%;</p>
+        <p>transform: translate(-50%,-50%);</p>
+        <p>}</p>
+      </div>
+    </section>
+
+    <section class="box_4">
+      <div>
+        <p>.box_4{</p>
+        <p>display: flex;</p>
+        <p>}</p>
+        <p>.box_4>div{</p>
+        <p>margin: auto;</p>
+        <p>}</p>
+      </div>
+    </section>
+
+    <section class="box_5">
+      <div>
+        <p>.box_5{</p>
+        <p>display: grid;</p>
+        <p>}</p>
+        <p>.box_5>div{</p>
+        <p>margin: auto;</p>
+        <p>}</p>
+      </div>
+    </section>
+  </body>
+</html>

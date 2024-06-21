@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        height: content;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      button {
+        padding: 1rem 2rem;
+        border: none;
+        font-size: 1.5rem;
+        background: rgb(31, 107, 133);
+        color: wheat;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      /* Pseudo classes using : */
+      button:hover {
+        background: rgb(20, 56, 68);
+      }
+      button:active {
+        background: #6aaf0f;
+      }
+      button:disabled {
+        opacity: 0.5;
+        background: black;
+      }
+
+      input {
+        font-size: 1.3rem;
+        padding: 1rem;
+        border: 5px solid black;
+        outline: none;
+        margin: 20px;
+
+        &:focus {
+          border: 4px solid rgb(229, 10, 160);
+        }
+      }
+      input[type="email"]:invalid {
+        border: 4px solid red;
+      }
+      input[type="email"]:valid {
+        border: 4px solid rgb(49, 208, 9);
+      }
+      label {
+        font-size: 2rem;
+      }
+
+      p {
+        height: content;
+        padding: 10px;
+        border: 2px solid red;
+        width: 70%;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .para {
+        margin: 20px auto;
+        border: 2px solid gold;
+
+        p:first-child {
+          background-color: rgb(25, 50, 25);
+        }
+        p:last-child {
+          background-color: rgb(68, 36, 36);
+        }
+        p:nth-child(2) {
+          background-color: rgb(21, 35, 75);
+        }
+      }
+      .para2 {
+        margin: 20px auto;
+        border: 2px solid green;
+
+        p:nth-child(odd) {
+          background-color: rgb(21, 35, 75);
+        }
+        p:nth-child(even) {
+          background-color: rgb(104, 8, 70);
+        }
+      }
+      .para3 {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
+        border: 2px solid firebrick;
+      }
+      .para3 :is(p, button) {
+        color: black;
+      }
+      .link {
+        border: 3px solid fuchsia;
+        padding: 20px;
+        margin: 30px;
+        a:visited {
+          color: red;
+        }
+      }
+      /* Pseudo Element using :: */
+
+      p::first-letter {
+        color: #6aaf0f;
+        font-size: 3rem;
+      }
+      p::first-line {
+        color: #0f4faf;
+        font-size: 20px;
+      }
+
+      .list {
+        border: 3px solid peru;
+        padding: 20px;
+        font-size: 2rem;
+        margin: 20px;
+
+        ::marker {
+          color: #4af008;
+        }
+      }
+      .para4 {
+        ::selection {
+          background-color: #348e10;
+          color: red;
+        }
+      }
+      input::placeholder {
+        color: #0faf2f;
+        font-size: 24px;
+        background-color:#0f4faf;
+      }
+    </style>
+  </head>
+  <body>
+    <button disabled type="button">Buy a coffee☕</button>
+    <hr width="80%" />
+    <label for="text"> Text : <input type="text" /></label>
+    <label for="text"> Text : <input type="text" /></label>
+
+    <label for="email"> Email : <input type="email" title="email" /> </label>
+
+    <hr width="80%" />
+
+    <div class="para">
+      <p>
+        First Paragraph <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel expedita
+        ipsa adipisci delectus architecto quod error nostrum enim repudiandae
+        doloribus, perspiciatis repellat magni aspernatur cumque voluptas
+        debitis mollitia qui facere.
+      </p>
+      <p>
+        Paragraph <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Vel expedita ipsa adipisci delectus architecto quod error nostrum enim
+        repudiandae doloribus, perspiciatis repellat magni aspernatur cumque
+        voluptas debitis mollitia qui facere.
+      </p>
+      <p>
+        Last Paragraph <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel expedita
+        ipsa adipisci delectus architecto quod error nostrum enim repudiandae
+        doloribus, perspiciatis repellat magni aspernatur cumque voluptas
+        debitis mollitia qui facere.
+      </p>
+    </div>
+    
+    <hr width="80%" />
+
+    <div class="para2">
+      <p>
+        First Paragraph <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel expedita
+        ipsa adipisci delectus architecto quod error nostrum enim repudiandae
+        doloribus, perspiciatis repellat magni aspernatur cumque voluptas
+        debitis mollitia qui facere.
+      </p>
+      <p>
+        Paragraph <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Vel expedita ipsa adipisci delectus architecto quod error nostrum enim
+        repudiandae doloribus, perspiciatis repellat magni aspernatur cumque
+        voluptas debitis mollitia qui facere.
+      </p>
+      <p>
+        Paragraph <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Vel expedita ipsa adipisci delectus architecto quod error nostrum enim
+        repudiandae doloribus, perspiciatis repellat magni aspernatur cumque
+        voluptas debitis mollitia qui facere.
+      </p>
+      <p>
+        Paragraph <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Vel expedita ipsa adipisci delectus architecto quod error nostrum enim
+        repudiandae doloribus, perspiciatis repellat magni aspernatur cumque
+        voluptas debitis mollitia qui facere.
+      </p>
+      <p>
+        Last Paragraph <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel expedita
+        ipsa adipisci delectus architecto quod error nostrum enim repudiandae
+        doloribus, perspiciatis repellat magni aspernatur cumque voluptas
+        debitis mollitia qui facere.
+      </p>
+    </div>
+
+    <hr width="80%" />
+
+    <div class="para3">
+      <p>
+        First Paragraph <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel expedita
+        ipsa adipisci delectus architecto quod error nostrum enim repudiandae
+        doloribus, perspiciatis repellat magni aspernatur cumque voluptas
+        debitis mollitia qui facere.
+      </p>
+      <button type="button">Button</button>
+    </div>
+
+    <hr width="80%" />
+
+    <div class="link">
+      <a href="">This is a Link</a>
+    </div>
+
+    <hr width="80%" />
+
+    <div class="list">
+      <ul>
+        <li>Apple</li>
+        <li>Graph</li>
+        <li>Banana</li>
+      </ul>
+    </div>
+
+    <hr width="80%" />
+
+    <div class="para4">
+      <p>
+        Selection paragaraph Color Changing <br />
+        Select this para <br />
+        ipsum dolor sit, amet consectetur adipisicing elit. Sapiente doloribus,
+        reiciendis mollitia quo nulla itaque at ad nemo earum. Quos inventore
+        illo nobis est beatae laudantium amet blanditiis obcaecati
+        laboriosam!Lorem
+      </p>
+    </div>
+
+    <hr width="80%" />
+
+    <div class="input">
+      <label for="lb">
+        <input type="text" placeholder="Text...." title="lb" />
+      </label>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trick</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      body {
+        /* border: 2px solid red; */
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      body > div {
+        margin: 30px;
+      }
+      /* clip-path */
+      .container1 {
+        width: 500px;
+        height: 500px;
+        border: 2px solid red;
+        background-color: rebeccapurple;
+        clip-path: circle(); /*no value = 50% */
+        clip-path: circle(60%);
+        clip-path: circle(50% at 0 0);
+        clip-path: circle(50% at 90px 0);
+        clip-path: circle(50% at 0 120px);
+        clip-path: circle(50% at 20px 20px);
+        /* rotate: 40deg; */
+        transition: all 1s;
+        &:hover {
+          clip-path: circle(100%);
+        }
+      }
+
+      .container2 {
+        width: 500px;
+        height: 500px;
+        background-color: rgb(37, 102, 85);
+        clip-path: polygon(2% 5%, 1% 50%, 60% 100%, 30% 70%);
+
+        transition: all 1s;
+        &:hover {
+          clip-path: polygon(2% 5%, 1% 50%, 60% 30%, 30% 70%); /*make buterfly*/
+        }
+      }
+
+      .container3 {
+        width: 500px;
+        height: 500px;
+        background-color: rgb(37, 79, 102);
+        clip-path: path("M0.5 73.5V1H20V56H72V73.5H0,5Z");
+
+        transition: all 1s;
+        &:hover {
+          /* clip-path: path("M0.9 3.5V1H20V56H72V73.5H0,5Z"); */
+          clip-path: path("M0.9 3.5V1H20V96H72V93.5H0,5Z");
+        }
+      }
+
+      /* Perspective */
+      .frame {
+        width: 500px;
+        height: 500px;
+        border: 3px solid red;
+        perspective: 800px;
+        transition: all 1s;
+        &:hover {
+          perspective: 300px;
+          scale: 0.9;
+        }
+        .shape {
+          width: 500px;
+          height: 500px;
+          background-color: rgb(85, 76, 53);
+          /* transform: rotateX(45deg); */
+          transition: all 3s ease;
+          &:hover {
+            /* transform: rotateX(45deg); */
+            transform: rotateY(180deg);
+          }
+        }
+      }
+
+      /*  aspect ratio */
+      .player {
+        width: 500px; /*only only one dimention requeird*/
+        /* height: 500px; */
+        background-color: black;
+        border: 2px solid rebeccapurple;
+        aspect-ratio: 16/9;
+      }
+
+      /*  Filter */
+      .filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 200px;
+          margin: 10px;
+          box-shadow: 0 0 5px #fff;
+          transition: all 0.6s;
+          &:hover {
+            box-shadow: 0 0 40px #fff;
+            scale: 1.07;
+          }
+
+          &.img1 {
+            filter: blur(5px);
+            &:hover {
+              filter: none;
+            }
+          }
+          &.img2 {
+            filter: brightness(40%); /*dark ness*/
+            &:hover {
+              filter: brightness(100%);
+            }
+          }
+          &.img3 {
+            filter: contrast(60%); /*white ness*/
+            &:hover {
+              filter: contrast(100%);
+            }
+          }
+
+          &.img4 {
+            filter: grayscale(100%);
+            &:hover {
+              filter: grayscale(0%);
+            }
+          }
+
+          &.img5 {
+            filter: hue-rotate(40deg);
+            &:hover {
+              filter: hue-rotate(360deg);
+            }
+          }
+
+          &.img6 {
+            filter: saturate(200%);
+            &:hover {
+              filter: saturate(400%);
+            }
+          }
+
+          &.img7 {
+            filter: sepia(100%);
+            &:hover {
+              filter: sepia(800%);
+            }
+          }
+          &.img8 {
+            filter:invert();
+          }
+          &.img9 {
+            
+            filter:drop-shadow();
+          }
+          &.img10 {
+            filter:invert();
+          }
+        }
+      }
+
+      /* input */
+      input {
+        padding: 20px;
+        border: 2px solid green;
+        border-radius: 5px;
+        caret-color: green;
+
+        &:focus {
+          outline: 5px solid green;
+        }
+        &::placeholder {
+          color: green;
+          font-size: 20px;
+        }
+      }
+      /* is, where, not, has */
+      .item h1,
+      .item h2,
+      .item h4,
+      .item p {
+        color: blue;
+      }
+
+      /* .item:has(h1, h2, p){ */
+      .item :where(h1, h2, p) {
+        color: rgb(157, 222, 17);
+      }
+
+      .item :is(h1, h2, p) {
+        /* higher priority*/
+        color: rgb(222, 120, 17);
+      }
+
+      .item :not(h1, p) {
+        color: rgb(44, 222, 17);
+      }
+      .review:has(button) .content {
+        filter: blur(10px);
+      }
+      video{
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+      ::cue{ /*caption background*/
+        background-color: red;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- clip-path -->
+    <div class="container1"></div>
+    <div class="container2"></div>
+    <div class="container3"></div>
+
+    <!-- Perspective -->
+    <div class="frame">
+      <div class="shape"></div>
+    </div>
+
+    <!-- aspect ratio -->
+    <div class="player"></div>
+
+    <!-- Filter -->
+    <div class="filter">
+      <img src="Photo/Lion.jpg" class="img1" alt="img" />
+      <img src="Photo/Lion.jpg" class="img2" alt="img" />
+      <img src="Photo/Lion.jpg" class="img3" alt="img" />
+      <img src="Photo/Lion.jpg" class="img4" alt="img" />
+      <img src="Photo/Lion.jpg" class="img5" alt="img" />
+      <img src="Photo/Lion.jpg" class="img6" alt="img" />
+      <img src="Photo/Lion.jpg" class="img7" alt="img" />
+      <img src="Photo/Lion.jpg" class="img8" alt="img" />
+      <img src="Photo/Lion.jpg" class="img9" alt="img" />
+      <img src="Photo/Lion.jpg" class="img10" alt="img" />
+    </div>
+
+    <!-- input styling -->
+    <input type="text" placeholder="Search..." />
+
+    <!-- is, where, not, has -->
+    <div class="item">
+      <h1>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
+        maiores necessitatibus omnis ipsa, non quis voluptatem architecto totam
+        delectus natus? Natus minima architecto ullam doloremque? Laboriosam a
+        nemo odit! Provident!
+      </h1>
+      <h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
+        maiores necessitatibus omnis ipsa, non quis voluptatem architecto totam
+        delectus natus? Natus minima architecto ullam doloremque? Laboriosam a
+        nemo odit! Provident!
+      </h2>
+      <h3>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
+        maiores necessitatibus omnis ipsa, non quis voluptatem architecto totam
+        delectus natus? Natus minima architecto ullam doloremque? Laboriosam a
+        nemo odit! Provident!
+      </h3>
+      <h4>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
+        maiores necessitatibus omnis ipsa, non quis voluptatem architecto totam
+        delectus natus? Natus minima architecto ullam doloremque? Laboriosam a
+        nemo odit! Provident!
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, quis
+        facilis a voluptatum eum aut harum beatae ipsa dolore aliquid
+        consequatur, unde tenetur adipisci natus pariatur eligendi cupiditate
+        accusamus itaque? Lorem ipsum dolor, sit amet consectetur adipisicing
+        elit. Molestiae maiores necessitatibus omnis ipsa, non quis voluptatem
+        architecto totam delectus natus? Natus minima architecto ullam
+        doloremque? Laboriosam a nemo odit! Provident!
+      </p>
+    </div>
+
+
+    <div class="review">
+      <div class="content">
+        <h1>Post 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex nisi
+          culpa, rem et, quisquam placeat deserunt impedit mollitia quia
+          voluptatem? Est quidem veniam esse magni fuga culpa expedita laborum?
+        </p>
+      </div>
+    </div>
+    <div class="review">
+      <button>Show Spoiler</button>
+      <div class="content">
+        <h1>Post 2</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex nisi
+          culpa, rem et, quisquam placeat deserunt impedit mollitia quia
+          voluptatem? Est quidem veniam esse magni fuga culpa expedita laborum?
+        </p>
+      </div>
+    </div>
+    <div class="review">
+      <div class="content">
+        <h1>Post 3</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex nisi
+          culpa, rem et, quisquam placeat deserunt impedit mollitia quia
+          voluptatem? Est quidem veniam esse magni fuga culpa expedita laborum?
+        </p>
+      </div>
+    </div>
+
+    <!-- Caption Style-->
+    <video src="video.mp4" controls>
+      <track kind="captions" label="En" src="caption.vtt">
+    </video>
+  </body>
+</html>

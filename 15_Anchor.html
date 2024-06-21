@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      .blue {
+        width: 300px;
+        aspect-ratio: 1;
+        background-color: blue;
+        border-radius: 10px;
+        position: absolute;
+        top: 130px;
+        left: 160px;
+      }
+      .orange {
+        width: 100px;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        background-color: orangered;
+        position: absolute;
+        bottom: anchor(top);
+        left: anchor(center);
+        left: anchor(10%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blue"></div>
+    <div class="orange" anchor="blue"></div>
+  </body>
+</html>

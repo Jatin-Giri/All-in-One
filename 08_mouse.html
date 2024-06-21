@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        min-block-size: 100svh;
+        background-color: black;
+        /* background-color: purple; */
+      }
+      .cursor {
+        &::before {
+          content: "";
+          position: absolute;
+          left: var(--x, 0px);
+          top: var(--y, 0px);
+          translate: -50% -50%;
+
+          width: 100px;
+          aspect-ratio: 1;
+          background-color: #fff;
+          border-radius: 50%;
+          filter: blur(1rem);
+        }
+        &::after {
+            content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle, lime, transparent 30%),
+            conic-gradient(
+              red,
+              blue,
+              green,
+              yellow,
+              purple,
+              magenta,
+              cyan,
+              yellow,
+              orange,
+              red
+            );
+
+          /* mix-blend-mode: color-burn; */
+          /* mix-blend-mode: color-dodge; */
+          mix-blend-mode: color;
+          animation: rotateHue 10s linear infinite;
+        }
+      }
+      @keyframes rotateHue{
+        to{
+            filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+
+        cursor.style.setProperty("--x", x + "px");
+        cursor.style.setProperty("--y", y + "px");
+      });
+
+      /*
+        - 👋 Hi, I’m @Jatin-Giri
+- 👀 I’m interested in Learning New Thinking about my Field
+- 🌱 I’m currently learning JavaScript
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+        */
+    </script>
+  </body>
+</html>

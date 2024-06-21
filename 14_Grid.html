@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        font-size: clamp(.75rem, 2vw, 10rem);
+
+      }
+      .box {
+        background-color: rebeccapurple;
+        /* height: 100px; */
+        /* aspect-ratio: 1; */
+        /* margin: 20px; */
+      }
+      .grid {
+        margin: auto;
+        border: 2px solid red;
+        width: 80%;
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+        grid-auto-rows: 200px;
+      }
+
+      .box1{
+        background-color: rebeccapurple;
+        height: 200px;
+
+        /* min-width: 400px;
+        width: 75%;
+        max-width: 800px; */
+        width: clamp(300px, 75%, 500px);
+      }
+      .boxs{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        margin-top: 20px;
+        border: 2px solid red;
+        div{
+            width: 25%;
+            margin: 20px;
+        }
+      }
+      .box-1{
+        background: lightgreen;
+        height: 50vh;
+      }
+      .box-2{
+        background: lightblue;
+        height: 50svh;
+      }
+      .box-3{
+        background: lightcoral;
+        height: 50lvh;
+      }
+      .box-4{
+        background: lightgray;
+        height: 50dvh;
+      }
+      .j{
+        height: 788px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="box1"></div>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At praesentium vitae laboriosam ullam ea provident dolorem accusamus molestias magnam culpa natus dolor optio aspernatur architecto tempore consequuntur voluptatem numquam iure temporibus, velit, corrupti tempora labore? Voluptas corporis porro tempore, alias similique aliquid quos? Tenetur ab, quisquam est dolore beatae provident, saepe itaque temporibus repellat porro officia totam tempore sequi voluptates a optio minus dignissimos reiciendis quas magni delectus maiores cum expedita? Quisquam, assumenda. Illum, ipsa dolores? Ad dicta, doloremque sapiente odit eos consequatur doloribus atque dolorem. Eligendi assumenda, dolores, consequatur recusandae laboriosam iure tenetur saepe sint quasi, ipsum necessitatibus ex! Voluptas maxime quas eos repellendus provident tempore nulla, consectetur quidem eveniet eum perspiciatis, asperiores earum molestias deserunt dolore hic veritatis consequatur id similique labore minus consequuntur excepturi! Mollitia, quo cum. Alias deserunt molestiae unde? Nisi quis rem adipisci fugiat voluptate quibusdam voluptatibus esse? Animi numquam eius, voluptatibus delectus similique laborum repudiandae aperiam obcaecati in unde fugiat enim odit nisi beatae dicta quidem minima consequatur earum quo vitae mollitia rerum! Ipsum dicta eaque, nesciunt voluptatibus ea accusamus. Cum mollitia, corporis temporibus laboriosam quidem qui nulla ab magnam debitis repellat consequuntur, asperiores in eum accusamus! Quod maiores repudiandae voluptatibus. Voluptate, distinctio quidem.
+<div class="boxs">
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <div class="box-4"></div>
+</div>  
+<div class="j"></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .button{
+            padding: .8em 1.6em;
+            background: blue;
+            border: 0;
+            border-radius: .24rem;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: transform 1000ms;
+        }
+        .button:hover,
+        .button:focus-visible{
+            transform: translateY(-1.45rem);
+            transition: transform 250ms;
+        }
+
+        .party-time{
+            animation: party 4000ms infinite;
+        }
+        @keyframes party{
+            0%{
+                background-color: red;
+            }
+            20%{
+                background-color: orange;
+            }
+            40%{
+                background-color: yellow;
+            }
+            60%{
+                background-color: green;
+            }
+            80%{
+                background-color: blueviolet;
+            }
+            100%{
+                background-color: purple;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <button class="button"> Click me!</button>
+
+    <!-- JavaScript -->
+    <script>
+        let button = document.querySelector('button');
+
+        button.addEventListener('click',()=>{
+            button.classList.toggle('party-time')
+        })
+    </script>
+</body>
+</html>

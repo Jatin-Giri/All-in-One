@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+        h1{
+            font-size: 8em;
+            position: fixed;
+            top: 10px;
+            color: white;
+            mix-blend-mode: difference;
+            
+        }
+        a{
+            color: red;
+            font-size: 40px;
+            text-decoration-thickness: 10px;
+            text-decoration-color: lime ;
+            text-decoration-style: double;
+            text-decoration-style: dotted;
+            text-decoration-style: dashed;
+            text-decoration-style: wavy ;
+
+            text-decoration-skip-ink: auto ; /*default*/
+            text-decoration-skip-ink: none ;
+            
+            text-decoration-line:line-through ;
+            text-decoration-line:overline;
+
+            text-decoration-line:overline underline;
+            text-decoration-line:overline underline line-through;
+
+            text-decoration: 8px wavy lime overline underline;
+            
+            text-decoration: 8px solid lime underline ;
+            text-underline-offset: 45px;
+
+            text-decoration: 8px solid lime overline ;
+            text-overline-offset: 45px; /*not exist*/
+
+
+
+            transition: color 300ms,
+            text-decoration-color 300ms;
+        }
+        a:hover{
+            color: lime;
+            text-decoration-color: red ;
+
+        }
+        .box{
+            margin-top: 200px;
+            width: 700px;
+            height: 110vh;
+            background-color: #444;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+
+        <h1>Hello World</h1>
+        <div class="box">
+            <a href="">This is Text Decoration Property </a>
+
+        </div>
+    </center>
+</body>
+</html>

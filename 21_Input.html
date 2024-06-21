@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #333;
+        color: #fff;
+        font-family: monospace;
+        font-size: 30px;
+        display: flex;
+        height: 60vh;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form {
+        width: 50%;
+        position: relative;
+        height: 50px;
+        /* background-color: red; */
+        overflow: hidden;
+      }
+
+      .form input {
+        width: 100%;
+        height: 100%;
+        /* color: magenta; */
+        color: lime;
+        background-color: #333;
+        padding-top: 20px;
+        font-size:xx-large;
+        border: none;
+        outline: none;
+      }
+      .form label {
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid #fff;
+      }
+      .form label::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-bottom: 3px solid dodgerblue;
+        left: 0;
+        bottom: -2px;
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+      }
+      .content-name {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .form input:focus + .label-name .content-name,
+      .form input:valid + .label-name .content-name {
+        transform: translateY(-100%);
+        font-size: 18px;
+        color: dodgerblue;
+      }
+      .form input:focus + .label-name::after,
+      .form input:valid + .label-name::after{
+        transform: translateX(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Input Animation</h1>
+    <div class="form">
+      <input type="text" name="name" autocomplete="off" required />
+      <label for="name" class="label-name">
+        <span class="content-name">Name</span>
+      </label>
+    </div>
+  </body>
+</html>

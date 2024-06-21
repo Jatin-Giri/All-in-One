@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            /* font-family: 'Courier New', Courier, monospace; */
+            font-family: sans-serif;
+        }
+        body{
+            margin: 20px;
+            padding: 20px;
+        }
+        .in{
+            border: 1px solid red;
+            min-width: 80vw;
+            min-height: 80vh;
+            margin: 30px;
+        }
+        section{
+            font-size: 30px;
+            text-align: center;
+        }
+        section>h2{
+            font-size: 5rem;
+            line-height: 1;
+        }
+        section>p{
+            font-size: 1.75rem;
+            line-height: 1.3;
+            max-width: 55ch;
+            margin-inline: auto;
+        }
+        .scroll-reveal  span {
+            color: hsl(0 0% 100%/ 0.2);  /*light -> color*/
+            /* color: hsl(0 0% 100%/ 0); Disapeare -> visible */
+            background-image: linear-gradient(90deg,red, blue);
+            /* background-image: linear-gradient(90deg,#fff, #fff); */
+            background-clip: text;
+            background-size: 0% 100%;  /*in this if 0% changing then we got what we want*/
+            background-repeat: no-repeat; 
+            animation: scroll_reveal  linear forwards;
+            animation-timeline: view();
+            display: inline;
+        }
+        .scroll-reveal h2 span{
+            animation-range-start: cover 20vh;
+            animation-range-end: cover 30vh;
+        }
+        .scroll-reveal p span{
+            animation-range-start: cover 22vh;
+            animation-range-end: cover 110vh;
+        }
+
+        @keyframes scroll_reveal{
+            to{
+                background-size: 100% 100%;
+            }
+
+        }
+
+
+
+    </style>
+  </head>
+  <body>
+    <section class="in"></section>
+
+    <section class="scroll-reveal">
+      <h2 class="section-title"><span> Heading</span></h2>
+      <p>
+       <span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
+        quidem, corporis minus cumque eveniet sequi earum accusamus temporibus
+        tempora saepe, iste qui incidunt nemo animi at repudiandae dicta, eius
+        impedit illo. At molestias saepe cupiditate expedita provident dolore
+        doloremque, optio, numquam nobis ipsa porro! At aliquam reiciendis
+        mollitia quos officiis quam, architecto quidem dolor ad tempore
+        voluptate hic dolores sapiente repellendus nisi voluptas corrupti,
+        nesciunt itaque autem modi distinctio, doloribus harum placeat sint!
+        Excepturi atque, illum, vitae illo, placeat facilis quisquam tenetur
+        voluptas odio in culpa porro explicabo quae a quo hic nobis ad. Possimus
+        error ullam nostrum rem optio. <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
+        quidem, corporis minus cumque eveniet sequi earum accusamus temporibus
+        tempora saepe, iste qui incidunt nemo animi at repudiandae dicta, eius
+        impedit illo. At molestias saepe cupiditate expedita provident dolore
+        doloremque, optio, numquam nobis ipsa porro! At aliquam reiciendis
+        mollitia quos officiis quam, architecto quidem dolor ad tempore
+        voluptate hic dolores sapiente repellendus nisi voluptas corrupti,
+        nesciunt itaque autem modi distinctio, doloribus harum placeat sint!
+        Excepturi atque, illum, vitae illo, placeat facilis quisquam tenetur
+        voluptas odio in culpa porro explicabo quae a quo hic nobis ad. Possimus
+        error ullam nostrum rem optio.
+       </span>
+      </p>
+    </section>
+
+    <section class="in"></section>
+
+  </body>
+</html>

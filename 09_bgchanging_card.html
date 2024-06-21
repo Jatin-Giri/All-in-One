@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        /* display: grid;
+        place-items: center; */
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        margin: 20px 10px;
+        font-size: 17px;
+      }
+      .card {
+        /* color: red; */
+        padding: 10px;
+        /* text-align: center; */
+        width: 300px;
+        height: 200px;
+        border-radius: 10%;
+        position: absolute;
+        z-index: 0;
+        background: rgb(0, 0, 0);
+        left: 30%;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: -0.3rem;
+        border-radius: 10%;
+
+        mix-blend-mode: color-burn;
+        background: conic-gradient(
+          red,
+          blue,
+          green,
+          yellow,
+          purple,
+          magenta,
+          cyan,
+          yellow,
+          orange,
+          red
+        );
+        filter: blur(2rem);
+        background-size: 200% 200%;
+        /* animation: moveGlow 25s alternate infinite; */
+        animation: moveGlow linear;
+        /* animation-timeline: scroll(); */
+        animation-timeline: view();
+      }
+      @keyframes moveGlow {
+        0% {
+          background-position: top left;
+        }
+        25% {
+          background-position: bottom left;
+        }
+        50% {
+          background-position: top right;
+        }
+        75% {
+          background-position: bottom right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolo amet consectetur Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Sunt excepturi tempora maxime ipsa sequi cupiditate
+      tenetur officia explicabo possimus ipsam hic aliquid quod quos accusantium
+      sapiente veniam, aspernatur amet cumque magnam eligendi praesentium? Iure
+      corporis animi nesciunt tempora, ea ipsum quis doloremque nobis saepe
+      ducimus ex autem hic molestias enim incidunt expedita, ab dolorem facere
+      sed? Ratione natus, laboriosam totam aut quaerat harum nobis velit earum
+      distinctio, quis facilis ea fuga asperiores! Autem fugiat repellendus
+      vitae voluptates adipisci saepe quidem eligendi aliquid doloribus aliquam
+      libero ex maxime, quod impedit minima fuga nihil, non pariatur! Quas id
+      eligendi hic, expedita autem explicabo dolores velit iste minima pariatur.
+      Aperiam repellat saepe, molestias corrupti error voluptates incidunt
+      veritatis laudantium minima debitis recusandae, dignissimos sequi?
+      Distinctio tempora, dolor ea totam expedita at rerum recusandae. Quaerat,
+      dolor eius ipsam repellendus quae dicta illo sunt doloribus, possimus ad
+      deserunt suscipit repudiandae, vitae recusandae error. Quasi facilis eius
+      neque eum nihil quas provident. Esse, quo incidunt! Reiciendis porro
+      architecto provident, eaque veniam laborum odit nostrum tempora in
+      repudiandae obcaecati debitis enim consequatur voluptatum quis sequi
+      alias? Ab repudiandae amet quas harum iste beatae nihil quia sit
+      dignissimos eveniet reiciendis, magnam quisquam. Praesentium dolore
+      commodi sit voluptate dolorum. kjdsjfljl adipisicing elit. Unde, voluptate
+      eligendi. Omnis suscipit accusamus obcaecati voluptatibus nisi, sapiente
+      minima quia.
+    </p>
+    <p>
+      Lorem ipsum dolo amet consectetur Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Sunt excepturi tempora maxime ipsa sequi cupiditate
+      tenetur officia explicabo possimus ipsam hic aliquid quod quos accusantium
+      sapiente veniam, aspernatur amet cumque magnam eligendi praesentium? Iure
+      corporis animi nesciunt tempora, ea ipsum quis doloremque nobis saepe
+      ducimus ex autem hic molestias enim incidunt expedita, ab dolorem facere
+      sed? Ratione natus, laboriosam totam aut quaerat harum nobis velit earum
+      distinctio, quis facilis ea fuga asperiores! Autem fugiat repellendus
+      vitae voluptates adipisci saepe quidem eligendi aliquid doloribus aliquam
+      libero ex maxime, quod impedit minima fuga nihil, non pariatur! Quas id
+      eligendi hic, expedita autem explicabo dolores velit iste minima pariatur.
+      Aperiam repellat saepe, molestias corrupti error voluptates incidunt
+      veritatis laudantium minima debitis recusandae, dignissimos sequi?
+      Distinctio tempora, dolor ea totam expedita at rerum recusandae. Quaerat,
+      dolor eius ipsam repellendus quae dicta illo sunt doloribus, possimus ad
+      deserunt suscipit repudiandae, vitae recusandae error. Quasi facilis eius
+      neque eum nihil quas provident. Esse, quo incidunt! Reiciendis porro
+      architecto provident, eaque veniam laborum odit nostrum tempora in
+      repudiandae obcaecati debitis enim consequatur voluptatum quis sequi
+      alias? Ab repudiandae amet quas harum iste beatae nihil quia sit
+      dignissimos eveniet reiciendis, magnam quisquam. Praesentium dolore
+      commodi sit voluptate dolorum. kjdsjfljl adipisicing elit. Unde, voluptate
+      eligendi. Omnis suscipit accusamus obcaecati voluptatibus nisi, sapiente
+      minima quia.
+    </p>
+
+    <div class="card">
+      <h2>Heading</h2>
+      <p>
+        Lorem ipsum dolo amet consectetur kjdsjfljl adipisicing elit. Unde,
+        voluptate eligendi. Omnis suscipit accusamus obcaecati voluptatibus
+        nisi, sapiente minima quia.
+      </p>
+    </div>
+
+    <p>
+      Lorem ipsum dolo amet consectetur kjdsjfljl adipisicing elit. Unde,
+      voluptate eligendi. Omnis suscipit accusamus obcaecati voluptatibus nisi,
+      sapiente minima quia. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Voluptate minus eligendi sapiente magni ipsa facilis? Obcaecati
+      quos, at nihil provident non cum repellat? Perferendis cumque, aspernatur,
+      laborum, sapiente id qui in quidem fuga quo magni at. Numquam cupiditate
+      nostrum ut maiores quod iusto, optio labore harum voluptates repellendus
+      pariatur itaque rem repudiandae doloremque reprehenderit aliquid iure
+      laborum velit corporis explicabo iste saepe consectetur rerum. Enim optio,
+      cumque provident aut maiores voluptates veritatis quaerat ut explicabo
+      deserunt quisquam animi recusandae fugiat maxime sit veniam iusto
+      architecto laudantium expedita voluptate beatae deleniti doloremque saepe
+      laborum? Fuga mollitia veniam laudantium soluta rerum commodi possimus.
+      Rem enim laboriosam, assumenda eius nemo vel fugit ea minus quidem dolorem
+      consectetur possimus voluptate consequuntur tempora omnis nihil incidunt,
+      obcaecati et. Assumenda, autem harum molestias eos earum hic nemo
+      accusamus labore rem nulla minima illum voluptas cupiditate necessitatibus
+      explicabo deleniti in eligendi, voluptatem architecto fugit. Vero
+      distinctio nam hic, excepturi ratione repudiandae qui repellendus
+      blanditiis non eius mollitia in ut nesciunt corrupti, sequi perferendis
+      tenetur odio sit expedita quas. Labore in eius iure tempora, obcaecati
+      corporis error porro dolorem modi aspernatur, provident, minima
+      perspiciatis possimus pariatur nam ipsum architecto est itaque. Quasi
+      repellendus, ad quis facere quaerat nostrum.
+    </p>
+    <p>
+      Lorem ipsum dolo amet consectetur kjdsjfljl adipisicing elit. Unde,
+      voluptate eligendi. Omnis suscipit accusamus obcaecati voluptatibus nisi,
+      sapiente minima quia. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Voluptate minus eligendi sapiente magni ipsa facilis? Obcaecati
+      quos, at nihil provident non cum repellat? Perferendis cumque, aspernatur,
+      laborum, sapiente id qui in quidem fuga quo magni at. Numquam cupiditate
+      nostrum ut maiores quod iusto, optio labore harum voluptates repellendus
+      pariatur itaque rem repudiandae doloremque reprehenderit aliquid iure
+      laborum velit corporis explicabo iste saepe consectetur rerum. Enim optio,
+      cumque provident aut maiores voluptates veritatis quaerat ut explicabo
+      deserunt quisquam animi recusandae fugiat maxime sit veniam iusto
+      architecto laudantium expedita voluptate beatae deleniti doloremque saepe
+      laborum? Fuga mollitia veniam laudantium soluta rerum commodi possimus.
+      Rem enim laboriosam, assumenda eius nemo vel fugit ea minus quidem dolorem
+      consectetur possimus voluptate consequuntur tempora omnis nihil incidunt,
+      obcaecati et. Assumenda, autem harum molestias eos earum hic nemo
+      accusamus labore rem nulla minima illum voluptas cupiditate necessitatibus
+      explicabo deleniti in eligendi, voluptatem architecto fugit. Vero
+      distinctio nam hic, excepturi ratione repudiandae qui repellendus
+      blanditiis non eius mollitia in ut nesciunt corrupti, sequi perferendis
+      tenetur odio sit expedita quas. Labore in eius iure tempora, obcaecati
+      corporis error porro dolorem modi aspernatur, provident, minima
+      perspiciatis possimus pariatur nam ipsum architecto est itaque. Quasi
+      repellendus, ad quis facere quaerat nostrum.
+    </p>
+  </body>
+</html>

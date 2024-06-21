@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer</title>
+    <style>
+        body{
+            background-color: #333;
+            /* text-align: center; */
+            font-family: Poppins;
+        }
+        .hero{
+            margin: 10px;
+            background-image: url('Photo/Lion.jpg') ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-block-size: 80vh;
+            place-content: center;
+            text-align: center;
+            color: orange;
+            text-shadow: 0 0 10px #000;
+            font-size: 35px;
+            text-transform: capitalize;
+            box-shadow: 0 0 20px #000;
+        }
+        .overlay{
+            /* border: 10px solid; */
+            /* 
+            border-image-source: linear-gradient(hsl(0 0% 100% / 0.3),hsl(39 100% 50% / .3));
+            border-image-slice: fill 1;
+            */
+
+            /* short hand */
+            border-image: fill 1 linear-gradient(hsl(0 0% 100% / .5),hsl(39 100% 50% / .5));
+            transition: all .3s ease;
+            
+        }
+        .overlay:hover{
+            border-image: fill 1 linear-gradient(hsl(0 0% 100% / 0),hsl(39 100% 50% / 0));
+            /* border-image: none; */
+        }
+    </style>
+</head>
+<body>
+    <section class="hero overlay">
+        <h1>overlay a background image</h1>
+        <p>heloo</p>
+    </section>
+</body>
+</html>

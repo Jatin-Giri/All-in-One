@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScrollBar</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      body {
+        height: content;
+        display: grid;
+        place-items: center;
+      }
+      .card {
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 0 10px #000;
+        border-radius: 10px;
+        text-align: center;
+        h1 {
+          writing-mode: vertical-lr;
+          float: left;
+        }
+      }
+
+      .cards {
+        display: flex;
+        gap: 1rem;
+        h1 {
+          writing-mode: horizontal-tb;
+          float: none;
+        }
+      }
+      .flip-img {
+        width: 500px;
+        img {
+          width: 100%;
+          border-radius: 20px;
+          transform: scaleX(-1);
+        }
+      }
+      .nr1 {
+        height: 80vh;
+        margin: 20px;
+        width: 80vw;
+        padding: 3rem;
+        display: grid;
+        place-items: center;
+        border: 3px solid red;
+        .box {
+          width: 500px;
+        }
+        h1 {
+          font-size: 70px;
+          color: blueviolet;
+          text-align: center;
+        }
+        img {
+          width: 100%;
+        }
+        a {
+          font-size: 60px;
+          text-decoration: none;
+          color: aliceblue;
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 20rem;
+        aspect-ratio: 1;
+        margin: 350px;
+        background-color: #333;
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        /* scroll-snap-type: x proximity; */
+        div {
+          min-width: 20rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 10rem;
+          color: #444;
+          border: 2px solid red;
+          box-sizing: border-box;
+          scroll-snap-align: center;
+        }
+      }
+      .box-3 {
+        box-shadow: 0 10px 20px #000;
+        background: #222;
+        width: 700px;
+        text-align: center;
+        font-size: 20px;
+        padding: 3rem;
+        margin: 220px;
+        overflow: auto;
+        resize: both;
+        /* resize: vertical; */
+        p,
+        h1 {
+          max-width: 500px;
+        }
+      }
+      .box-4 {
+        margin: 300px auto;
+        max-width: 600px;
+        box-shadow: 0 0 10px #00f;
+        font-size: 30px;
+        padding: 30px;
+        text-align: center;
+        p {
+          max-width: 30rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        /* :has(#ck:checked){
+          -webkit-line-clamp: 5;
+        } */
+      }
+
+      .box-5 {
+        height: 600px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border: 2px solid paleturquoise;
+        text-align: center;
+        h1 {
+          font-size: 10rem;
+          background: linear-gradient(
+            to right,
+            rgb(67, 124, 205),
+            rgb(10, 171, 173),
+            rgb(4, 170, 4),
+            yellow,
+            orange,
+            red
+          );
+          
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: fade 1s infinite ease-in-out alternate;
+          pointer-events: none;
+          opacity: 0;
+        }
+      }
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .box-6 {
+        background: #888;
+        margin: 100px;
+        width: 700px;
+        height: 700px;
+        overflow: hidden;
+        resize: horizontal;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-fit: cover;
+          object-fit: fill;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Heading</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        necessitatibus, id consequuntur alias sequi nam quisquam facere corporis
+        fugit reprehenderit.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h1>Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          necessitatibus, id consequuntur alias sequi nam quisquam facere
+          corporis fugit reprehenderit.
+        </p>
+      </div>
+      <div class="card">
+        <h1>Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          necessitatibus, id consequuntur alias sequi nam quisquam facere
+          corporis fugit reprehenderit.
+        </p>
+      </div>
+      <div class="card">
+        <h1>Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          necessitatibus, id consequuntur alias sequi nam quisquam facere
+          corporis fugit reprehenderit.
+        </p>
+      </div>
+    </div>
+
+    <div class="flip-img">
+      <img src="Photo/Lion.jpg" alt="Lion" />
+    </div>
+
+    <section class="nr1" id="page1">
+      <div class="box">
+        <h1>Page 1</h1>
+        <img src="Photo/Lion.jpg" alt="" />
+        <a href="#page2">Go to Page2</a>
+      </div>
+    </section>
+    <section class="nr1" id="page2">
+      <div class="box">
+        <h1>Page 2</h1>
+        <img src="Photo/Lion.jpg" alt="" />
+        <a href="#page3">Go to Page3</a>
+      </div>
+    </section>
+    <section class="nr1" id="page3">
+      <div class="box">
+        <h1>Page 3</h1>
+        <img src="Photo/Lion.jpg" alt="" />
+        <a href="#page1">Go to Page1</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+      <div class="box4">4</div>
+      <div class="box5">5</div>
+    </div>
+
+    <div class="box-3">
+      <h1>Heading</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam facilis
+        quia esse enim modi atque unde, laborum cumque velit provident ipsa
+        quisquam sint dicta dolores. Eos totam esse nemo tempore?
+      </p>
+    </div>
+
+    <div class="box-4">
+      <label for="ck">
+        Expand
+        <input type="checkbox" name="ck" id="ck" title="ck" />
+      </label>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error,
+        repudiandae id, veniam nostrum omnis ipsum natus illum, quod odio
+        impedit dolor possimus! Magni libero voluptas in, veniam quos tenetur
+        sit! Nesciunt, fugiat, in laborum sint tenetur qui amet nostrum expedita
+        veniam culpa illo maiores excepturi omnis modi consequatur nobis ipsa!
+      </p>
+    </div>
+
+    <div class="box-5">
+      <h1>Hello World!</h1>
+    </div>
+
+    <div class="box-6">
+      <img src="Photo/sham.jpg" alt="" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        color-scheme: dark;
+      }
+      body {
+        display: flex;
+      }
+      .main {
+        flex-grow: 1;
+        border: 2px solid red;
+      }
+      .sidebar {
+        width: 40%;
+        border-left: 1px solid black;
+      }
+      .box {
+        width: 100px;
+        aspect-ratio: 1;
+        margin: 20px;
+        background-color: rebeccapurple;
+      }
+      .main,
+      .sidebar {
+        container-type: inline-size;
+      }
+      @container (width >= 500px) {
+        .box {
+          background-color: brown;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box"></div>
+    </div>
+    <div class="sidebar">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

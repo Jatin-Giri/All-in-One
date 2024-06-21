@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: grid;
+            min-height: 100vh;
+            place-items: center;
+            background-color: #333;
+
+            perspective: 1000px;
+        }
+        .party{
+            font-size: 2rem;
+            color: #fff;
+            background-color: hsl(257, 93%, 58%);
+            background-position: 0 100px;
+            padding: 1rem 2rem;
+            border: 0;
+            border-radius: 100vw;
+            cursor: pointer;
+            transition: background-position 200ms;
+
+            transform-style: preserve-3d;
+
+            &:hover,
+            &:focus{
+                background-position: 0 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="party">
+        Party Time🎊
+        <span class="confetti"></span>
+    </button>
+</body>
+</html>
