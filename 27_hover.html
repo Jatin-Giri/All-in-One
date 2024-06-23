@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .list{
+            display: flex;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        img{
+            width: 100px;
+            margin: 5px;
+            height: 200px;
+        }
+        .list .item{
+            transition: .5s;
+            filter: brightness(0);
+        }
+        .list .item:hover{
+            filter: brightness(1);
+            transform: translateZ(200px);
+        }
+        /* .list .item:hover + .item{ */
+        .list .item:hover + *{
+            filter: brightness(0.6);
+            transform: translateZ(150px) rotateY(40deg);
+        }
+        .list .item:hover + * + *{
+            filter: brightness(0.4);
+            transform: translateZ(70px) rotateY(20deg);
+        }
+        .list .item:hover + * + * + *{
+            filter: brightness(0.2);
+            transform: translateZ(30px) rotateY(10deg);
+        }
+
+
+        .list .item:has(+ *:hover){
+            filter: brightness(0.6);
+            transform: translateZ(150px) rotateY(-40deg);
+        }
+        .list .item:has(+ * + *:hover){
+            filter: brightness(0.4);
+            transform: translateZ(70px) rotateY(-20deg);
+        }
+        .list .item:has(+ * + * + *:hover){
+            filter: brightness(0.2);
+            transform: translateZ(30px) rotateY(-10deg);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Hover</h1>
+        <div class="list">
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+            <div class="item"><img src="Lion.jpg" alt="Lion"></div>
+        </div>
+    </main>
+</body>
+</html>
